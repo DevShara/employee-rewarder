@@ -1,10 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import Employees from "./components/Employees";
 
 const App = () => {
   return (
     <>
-      <h1>RENDERED</h1>
+      <Employees />
     </>
   );
 };
