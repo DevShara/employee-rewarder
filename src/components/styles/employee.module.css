@@ -1,0 +1,33 @@
+.employeeContainer{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+    padding: 6px;
+    justify-content: center;
+}
+
+.employeeContainer:hover{
+    background-color: #e4e4e4;
+}
+
+.empName{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.empDesignation{
+    font-size: medium;
+    font-weight: 400;
+    margin-left: 3rem;
+}
+
+.empMarks{
+    font-size: large;
+    font-weight: bold;
+    margin-left: 3rem;
+    background-color: gray;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: #fff;
+  
+}

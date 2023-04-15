@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import  {title} from './styles/employees.module.css';
+import  { ul} from './styles/employees.module.css';
 import Employee from './Employee';
 
 const Employees = () => {
@@ -18,14 +18,15 @@ const Employees = () => {
 
     return(
     <>
-        <h1 className={title}>Employees</h1>
-        <ul>
-            {employees.map(employee => {
-                return (
-                    <Employee key={employee.empId} employee={employee} />
-                )
-            })}
-        </ul>
+        <div className='container'>
+            <ul className={ul}>
+                {employees.map(employee => {
+                    return (
+                        <Employee key={employee.empId} employee={employee} />
+                    )
+                })}
+            </ul>
+        </div>
     </>
     )
 
