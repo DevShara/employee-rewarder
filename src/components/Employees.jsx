@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import  { ul} from './styles/employees.module.css';
 import Employee from './Employee';
 
 const Employees = () => {
@@ -19,7 +18,7 @@ const Employees = () => {
     return(
     <>
         <div className='container'>
-            <ul className={ul}>
+            <ul  className=' mx-auto '>
                 {employees.map(employee => {
                     return (
                         <Employee key={employee.empId} employee={employee} />
