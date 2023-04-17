@@ -18,7 +18,7 @@ const Employees = () => {
     return(
     <>
         <div className='container'>
-            <ul  className=' mx-auto '>
+            <ul className=' mx-auto '>
                 {employees.map(employee => {
                     return (
                         <Employee key={employee.empId} employee={employee} />

@@ -1,10 +1,15 @@
-import { LOGIN } from "./actions"
+import {LOGIN, LOGOUT } from "./actions"
 
-export const initialState = {userName: ''}
+export const initialState = {userName: '', employees: []}
 
 export const reducer = (state = initialState, action) => {
     if(action.type == LOGIN){
-        return {userName: 'Ishara Sam'};
+        return {isLogin:true, userName: action.payload};
     }
+
+    if(action.type == LOGOUT){
+        return {isLogin:false, userName:null };
+    }
+
     return state
 }
