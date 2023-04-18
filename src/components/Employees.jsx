@@ -1,19 +1,24 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from "react-redux";
 import Employee from './Employee';
 
 const Employees = () => {
-    const [employees, setEmployees] = useState([])
 
-    useEffect(() => {
-        fetchEmployees()
-    }, [])
+    const employees = useSelector(state => state.employees);
 
-    async function fetchEmployees(){
-        const res = await fetch('../data.json')
-        const data = await res.json();
 
-        setEmployees(data)
-    } 
+    // const [employees, setEmployees] = useState([])
+
+    // useEffect(() => {
+    //     fetchEmployees()
+    // }, [])
+
+    // async function fetchEmployees(){
+    //     const res = await fetch('../data.json')
+    //     const data = await res.json();
+
+    //     setEmployees(data)
+    // } 
 
     return(
     <>
