@@ -1,12 +1,11 @@
-import {employeeContainer, empName, empDesignation, empMarks} from './styles/employee.module.css'
 
 const Employee = ({employee}) => {
     return(
         <li>
-            <div className={employeeContainer}>
-                <h2 className={empName}>{employee.name}</h2>
-                <h2 className={empDesignation}>{employee.designation}</h2>
-                <h2 className={empMarks}>{employee.marks}</h2>
+            <div className="flex gap-6 justify-center border-b-2 p-2" >
+                <h2 >{employee.name}</h2>
+                <h2 >{employee.designation}</h2>
+                <h2 >{employee.vote}</h2>
             </div>
         </li>
     )
