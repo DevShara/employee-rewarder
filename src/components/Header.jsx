@@ -7,8 +7,10 @@ import netlifyIdentity from 'netlify-identity-widget';
 
 const Header = () => {
     const user = useSelector(state => state.user);
-    const isLogin = useSelector(state => state.isLogin);
+    // const isLogin = useSelector(state => state.isLogin);
     const employees = useSelector(state => state.employees);
+
+    const [isLogin, setIsLogin] = useState(false);
 
 
     const userId = 102
@@ -30,6 +32,8 @@ const Header = () => {
         dispatch(logout())            
     }  
     }
+
+
 
     
 netlifyIdentity.init({

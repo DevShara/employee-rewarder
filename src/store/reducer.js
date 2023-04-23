@@ -4,13 +4,13 @@ export const initialState =
 
 
 {user: '',  isLogin:false, employees: [
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 100, vote: 25, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 101, vote: 26, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 102, vote: 50, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 103, vote: 35, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 104, vote: 85, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 105, vote: 95, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
-    {name: "First Name Last Name ", designation: "Graphic Designer", empId: 106, vote: 15, voteAvailable:true, suggestions: [], attendence: 56, "jobRes": 7, empVotes:0},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 100, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 25, voteAvailable:true, suggestions: [], contributions: []},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 101, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 26, voteAvailable:true, suggestions: [], contributions: []},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 102, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 50, voteAvailable:true, suggestions: [], contributions: []},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 103, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 35, voteAvailable:true, suggestions: [], contributions: []},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 104, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 85, voteAvailable:true, suggestions: [], contributions: []},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 105, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 95, voteAvailable:true, suggestions: [], contributions: []},
+    {name: "Ishara Samuditha", designation: "Graphic Designer", empId: 106, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 15, voteAvailable:true, suggestions: [], contributions: []},
 
 ]}
 
