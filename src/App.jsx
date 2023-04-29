@@ -4,55 +4,24 @@ import Employees from "./components/Employees";
 import VoteEmployee from "./components/VoteEmployee"
 import './styles/styles.css'
 import Header from "./components/Header";
-import { Provider } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import { store } from "./store/store";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./Main";
 
-import netlifyIdentity from 'netlify-identity-widget';
 
-netlifyIdentity.init({
-  container: '#netlify-modal', // defaults to document.body
-  locale: 'en' // defaults to 'en'
-});
 
 const App = () => {
 
-  const user = netlifyIdentity.currentUser();
-
-  const [isLogin, setIsLogin] = useState(false);
-
-  netlifyIdentity.on('login', user => {
-    setIsLogin(true);
-  });
-
-  if(!isLogin && !user){
-    netlifyIdentity.open(); // open the modal
-
-    return(
-      <button>Login</button>
-    )
-  }else{
     return (
       <Provider store={store}>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Employees />}></Route>
-            <Route path="vote" element={<VoteEmployee />}></Route>
-          </Routes>
-          
-        </BrowserRouter>
+        <Main />
       </Provider>
     );
   }
 
-  
 
-  
-  
-};
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(React.createElement(App));
+root.render(<App/> );

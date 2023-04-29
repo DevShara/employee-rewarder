@@ -7,35 +7,9 @@ import netlifyIdentity from 'netlify-identity-widget';
 
 const Header = () => {
     const user = useSelector(state => state.user);
-    // const isLogin = useSelector(state => state.isLogin);
+    const isLogin = useSelector(state => state.isLogin);
     const employees = useSelector(state => state.employees);
-
-    const [isLogin, setIsLogin] = useState(false);
-
-
-    const userId = 102
-
-    const dispatch = useDispatch();
-
-    function logUser(e){
-        e.preventDefault(); 
-
-    if(!isLogin){
-        employees.forEach(employee => {
-            console.log(employee)
-            if(employee.empId == userId){                    
-                dispatch(login(employee.empId));
-                
-            }
-        })
-    }else{
-        dispatch(logout())            
-    }  
-    }
-
-
-
-    
+  
 netlifyIdentity.init({
     container: '#netlify-modal', // defaults to document.body
     locale: 'en' // defaults to 'en'
@@ -49,7 +23,7 @@ netlifyIdentity.init({
             <div className="flex items-center gap-6">
                 <h1>{user}</h1>
                 <button onClick={() => {
-                    netlifyIdentity.open(); // open the modal
+                    netlifyIdentity.logout(); // open the modal
 
                 }} className=" border p-2">{isLogin ? "Logout" : "Login"}</button>
             </div>
