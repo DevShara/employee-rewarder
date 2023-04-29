@@ -4,8 +4,8 @@ export const EMPLOYEE_RATED = 'EMPLOYEE_RATED';
 export const VOTE_OVER = 'VOTE_OVER';
 
 
-export const login = (userName) => {
-    return {type: LOGIN, payload: userName };
+export const login = (user) => {
+    return {type: LOGIN, payload: user };
 }
 
 export const logout = () => {
@@ -17,5 +17,5 @@ export const rateEmployee = (empId, vote) => {
 }
 
 export const voteOver = (empId) => {
-    return {type: VOTE_OVER, payload: {empId}}
+    return {type: VOTE_OVER, payload: empId}
 }
