@@ -12,41 +12,37 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import netlifyIdentity from 'netlify-identity-widget';
 import { login, logout } from "./store/actions";
 
-
 netlifyIdentity.init({
   container: '#netlify-modal', // defaults to document.body
   locale: 'en' // defaults to 'en'
 });
 
 const Main = () => {
-  const [isLogin, setIsLogin] = useState(netlifyIdentity.currentUser() != null) 
-  console.log(isLogin)
   const dispatch = useDispatch();
  
+  const isLogin = useSelector(state => state.isLogin);
+ 
     netlifyIdentity.on('login', user => {
-      setIsLogin(true);
       netlifyIdentity.close();
-
+        dispatch(login(user.email))
     });
 
     netlifyIdentity.on('logout', () => {
-      setIsLogin(false)
+      dispatch(logout())
     });
 
 
   if(isLogin){
       return (
         <div>
-        
           <BrowserRouter>
             <Header />
             <Routes>
               <Route path="/" element={<Employees />}></Route>
               <Route path="vote" element={<VoteEmployee />}></Route>
             </Routes>
-            
           </BrowserRouter>
-          </div>
+        </div>  
       );
       
   }else{

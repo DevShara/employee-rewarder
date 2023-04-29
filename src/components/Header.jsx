@@ -22,8 +22,10 @@ netlifyIdentity.init({
             <Link to="vote" className=" bg-gray-50 text-gray-900 p-2">Vote an employee</Link>
             <div className="flex items-center gap-6">
                 <h1>{user}</h1>
-                <button onClick={() => {
-                    netlifyIdentity.logout(); // open the modal
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    netlifyIdentity.logout();
+                    console.log('logged outtt')
 
                 }} className=" border p-2">{isLogin ? "Logout" : "Login"}</button>
             </div>
