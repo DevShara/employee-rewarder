@@ -9,8 +9,6 @@ import { store } from "./store/store";
 
 import Main from "./Main";
 
-
-
 const App = () => {
 
     return (
@@ -19,8 +17,6 @@ const App = () => {
       </Provider>
     );
   }
-
-
 
 const container = document.getElementById("root");
 const root = createRoot(container);

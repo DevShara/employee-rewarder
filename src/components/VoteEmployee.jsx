@@ -1,46 +1,47 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { rateEmployee, voteOver } from "../store/actions";
+import netlifyIdentity from 'netlify-identity-widget';
+
 
 const VoteEmployee = () => {
     const employees = useSelector(state => state.employees);
     const user = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    const [currentUser, setCurrentUser] = useState({})
-   
+
+    const [currentUser, setCurrentUser] = useState({});
+    const [voted, setVoted] = useState(!currentUser.voteAvailable);
+    console.log('em', currentUser)
+
+ 
     function vote(e){
         e.preventDefault();
-        employees.forEach(employee => {
-            if(employee.empId ==  user && employee.voteAvailable){
-                dispatch(rateEmployee(+e.target.employeeName.value, +e.target.rate.value));
-                dispatch(voteOver(user))
-            }
-        })
-        
+        // dispatch(rateEmployee(+e.target.employeeName.value, +e.target.rate.value));
+        dispatch(voteOver(currentUser.empId));
+        setVoted(true);        
     }
 
-  useEffect(() => {
-    console.log(user)
-    employees.forEach(employee => {
-        if(employee.empId ==  user){
-            setCurrentUser(employee)
-        }
-    })
-  }, [user, employees])
+    useEffect(() => {
+        employees.forEach(employee => {
+            if(employee.email == netlifyIdentity.currentUser().email){
+                setCurrentUser(employee);
+            }
+        })     
+    }, [voted])
 
 
     if(currentUser.voteAvailable){
         return (
             <div className="container m-6">
-                <h1 className=" text-2xl">Vote your favorite co worker</h1>
+                <h1 className=" text-2xl">{currentUser.name} Vote your favorite co worker</h1>
                 <form className=" mt-6" onSubmit={vote} >
                     <div className="flex gap-6">
                         <label htmlFor="employeeName" className=" block mt-6">
                             Select a co worker
                             <select id="employeeName" className="block mt-3">
                                 {employees.map(employee => {
-                                return <option key={employee.empId} value={employee.empId}>{employee.empId}</option>
+                                return <option key={employee.empId} value={employee.empId}>{employee.name}</option>
                                 })}
                             </select>
                         </label>

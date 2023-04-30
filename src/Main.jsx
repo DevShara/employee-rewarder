@@ -19,18 +19,23 @@ netlifyIdentity.init({
 
 const Main = () => {
   const dispatch = useDispatch();
- 
-  const isLogin = useSelector(state => state.isLogin);
- 
-    netlifyIdentity.on('login', user => {
-      netlifyIdentity.close();
-        dispatch(login(user.email))
-    });
 
-    netlifyIdentity.on('logout', () => {
-      dispatch(logout())
-    });
+  const [isLogin, setIsLogin] = useState(netlifyIdentity.currentUser() != null);
 
+  if(isLogin){
+    dispatch(login(netlifyIdentity.currentUser().email))
+  }
+  
+  netlifyIdentity.on('login', user => {
+    netlifyIdentity.close()
+    dispatch(login(user.email))
+    setIsLogin(true)
+  });
+
+  netlifyIdentity.on('logout', () => {
+    dispatch(logout())
+    setIsLogin(false)
+  });
 
   if(isLogin){
       return (
