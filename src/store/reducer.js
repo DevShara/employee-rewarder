@@ -1,19 +1,19 @@
 import {LOGIN, LOGOUT, EMPLOYEE_RATED, VOTE_OVER, SIGNUP } from "./actions"
 
-export const initialState = JSON.parse(localStorage.getItem('store'));
+export const initialState =
 
 
 
-// {user: '',  isLogin:false, employees: [
-//     {email: "isharasamuditha@gmail.com", name: "Ishara Sam", designation: "Graphic Designer", empId: 100, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 25, voteAvailable:true, suggestions: [], contributions: []},
-//     {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 101, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 26, voteAvailable:true, suggestions: [], contributions: []},
-//     {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 102, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 50, voteAvailable:true, suggestions: [], contributions: []},
-//     {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 103, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 35, voteAvailable:true, suggestions: [], contributions: []},
-//     {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 104, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 85, voteAvailable:true, suggestions: [], contributions: []},
-//     {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 105, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 95, voteAvailable:true, suggestions: [], contributions: []},
-//     {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 106, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 15, voteAvailable:true, suggestions: [], contributions: []},
+{user: '',  isLogin:false, employees: [
+    {email: "isharasamuditha@gmail.com", name: "Ishara Sam", designation: "Graphic Designer", empId: 100, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 25, voteAvailable:true, suggestions: [], contributions: []},
+    {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 101, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 26, voteAvailable:true, suggestions: [], contributions: []},
+    {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 102, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 50, voteAvailable:true, suggestions: [], contributions: []},
+    {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 103, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 35, voteAvailable:true, suggestions: [], contributions: []},
+    {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 104, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 85, voteAvailable:true, suggestions: [], contributions: []},
+    {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 105, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 95, voteAvailable:true, suggestions: [], contributions: []},
+    {email: "isharasamuditha@gmail.com1", name: "Ishara Samuditha", designation: "Graphic Designer", empId: 106, totalScore:0, scoreFromEmployer:0, voteFromEmployees: 15, voteAvailable:true, suggestions: [], contributions: []},
 
-// ]}
+]}
 
 // JSON.parse(localStorage.getItem('store'));
 
