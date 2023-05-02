@@ -1,4 +1,4 @@
-import {LOGIN, LOGOUT, EMPLOYEE_RATED, VOTE_OVER } from "./actions"
+import {LOGIN, LOGOUT, EMPLOYEE_RATED, VOTE_OVER, SIGNUP } from "./actions"
 
 export const initialState = JSON.parse(localStorage.getItem('store'));
 
@@ -45,6 +45,10 @@ export const reducer = (state = initialState, action) => {
             return item
         })
         }
+    }
+
+    if(action.type == SIGNUP){
+        return {user:state.user, isLogin:state.isLogin, employees: [...employees, {email: action.payload.email, name: action.payload.name, designation: "", empId:null , totalScore:0, scoreFromEmployer:0, voteFromEmployees: 0, voteAvailable:true, suggestions: [], contributions: []} ]}
     }
 
     return state
