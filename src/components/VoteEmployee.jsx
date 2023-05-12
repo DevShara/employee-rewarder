@@ -17,7 +17,7 @@ const VoteEmployee = () => {
  
     function vote(e){
         e.preventDefault();
-        // dispatch(rateEmployee(+e.target.employeeName.value, +e.target.rate.value));
+        dispatch(rateEmployee(+e.target.employeeName.value, +e.target.rate.value));
         dispatch(voteOver(currentUser.empId));
         setVoted(true);        
     }
@@ -31,7 +31,7 @@ const VoteEmployee = () => {
     }, [voted])
 
 
-    if(currentUser.voteAvailable){
+    if(!voted){
         return (
             <div className="container m-6">
                 <h1 className=" text-2xl">{currentUser.name} Vote your favorite co worker</h1>
