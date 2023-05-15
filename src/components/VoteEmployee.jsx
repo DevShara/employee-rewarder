@@ -24,6 +24,7 @@ const VoteEmployee = () => {
 
     useEffect(() => {
         employees.forEach(employee => {
+
             if(employee.email == netlifyIdentity.currentUser().email){
                 setCurrentUser(employee);
             }
